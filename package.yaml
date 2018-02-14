@@ -1,0 +1,40 @@
+name:                idris-il
+version:             0.1.0.0
+github:              "ralphmorton/idris-il"
+license:             BSD3
+author:              "Ralph Morton"
+maintainer:          "ralphmorton@gmail.com"
+copyright:           " 2018 Ralph Morton"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Programming languages
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on Github at <https://github.com/ralphmorton/idris-il#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- idris
+- mtl
+- text
+
+library:
+  source-dirs: src
+
+executables:
+  idris-il-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - idris-il
